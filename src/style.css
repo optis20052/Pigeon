@@ -1,0 +1,130 @@
+/* method colors */
+.method-get { color: #2ec27e; }
+.method-post { color: #e5a50a; }
+.method-put { color: #3584e4; }
+.method-patch { color: #9141ac; }
+.method-delete { color: #e01b24; }
+.method-head { color: #2190a4; }
+.method-options { color: #c64600; }
+
+.method-badge {
+  font-weight: 800;
+  font-size: 0.72em;
+  font-family: monospace;
+}
+
+.method-dropdown > button { font-weight: 800; font-family: monospace; min-width: 96px; }
+.method-dropdown.method-get > button { color: #2ec27e; }
+.method-dropdown.method-post > button { color: #e5a50a; }
+.method-dropdown.method-put > button { color: #3584e4; }
+.method-dropdown.method-patch > button { color: #9141ac; }
+.method-dropdown.method-delete > button { color: #e01b24; }
+.method-dropdown.method-head > button { color: #2190a4; }
+.method-dropdown.method-options > button { color: #c64600; }
+
+.url-bar entry, .url-bar button, .url-bar dropdown > button { min-height: 38px; }
+.url-entry { font-family: monospace; }
+.send-button { padding-left: 22px; padding-right: 22px; font-weight: bold; }
+
+.code-view, .code-view text { background-color: transparent; }
+.card > .code-view, scrolledwindow.card { border-radius: 8px; }
+
+.response-pane { border-top: 1px solid alpha(currentColor, 0.12); }
+
+.status-pill {
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.status-pill.status-ok { background: alpha(#2ec27e, 0.18); color: #26a269; }
+.status-pill.status-redirect { background: alpha(#3584e4, 0.18); color: #3584e4; }
+.status-pill.status-client-error { background: alpha(#e5a50a, 0.2); color: #c64600; }
+.status-pill.status-server-error { background: alpha(#e01b24, 0.18); color: #e01b24; }
+label.status-ok { color: #26a269; font-weight: bold; }
+label.status-redirect { color: #3584e4; font-weight: bold; }
+label.status-client-error { color: #c64600; font-weight: bold; }
+label.status-server-error { color: #e01b24; font-weight: bold; }
+
+.test-pass, .test-fail {
+  font-weight: 800;
+  font-size: 0.8em;
+  padding: 1px 8px;
+  border-radius: 6px;
+}
+.test-pass { background: alpha(#2ec27e, 0.2); color: #26a269; }
+.test-fail { background: alpha(#e01b24, 0.18); color: #e01b24; }
+
+.kv-list { background: transparent; }
+.kv-list > row { padding: 0; }
+.kv-list entry { min-height: 30px; }
+
+.collection-tree > row { padding-top: 2px; padding-bottom: 2px; min-height: 30px; }
+/* tinted rows form one continuous band per colored folder, like JetBrains file colors */
+.collection-tree > row.tinted { margin-top: 0; margin-bottom: 0; border-radius: 0; padding-top: 3px; padding-bottom: 3px; }
+.collection-tree .tree-more { opacity: 0; min-height: 22px; min-width: 22px; padding: 0; }
+.collection-tree > row:hover .tree-more,
+.collection-tree > row:selected .tree-more,
+.collection-tree .tree-more:checked { opacity: 1; }
+.keycap { font-family: monospace; font-size: 0.85em; padding: 2px 8px; border-radius: 6px; background: alpha(currentColor, 0.08); box-shadow: inset 0 -1px alpha(currentColor, 0.2); }
+
+/* custom tab strip */
+.tab-bar { padding: 4px 6px 4px 8px; border-bottom: 1px solid alpha(currentColor, 0.1); }
+.tab-strip { padding: 2px 0; }
+.tab-chip {
+  padding: 4px 4px 4px 12px;
+  border-radius: 8px;
+  min-height: 28px;
+  transition: background-color 120ms;
+}
+.tab-chip:hover { background-color: alpha(currentColor, 0.06); }
+.tab-chip.selected { background-color: alpha(currentColor, 0.11); }
+.tab-chip .method-badge { font-size: 0.75em; }
+.tab-chip .tab-close { min-width: 22px; min-height: 22px; padding: 0; opacity: 0.4; }
+.tab-chip:hover .tab-close, .tab-chip.selected .tab-close { opacity: 1; }
+.tab-chip .tab-dirty { font-size: 0.6em; color: @accent_color; }
+
+/* brighter method colors on dark backgrounds */
+@media (prefers-color-scheme: dark) {
+  .method-get, .method-dropdown.method-get > button { color: #57e389; }
+  .method-post, .method-dropdown.method-post > button { color: #f8c43a; }
+  .method-put, .method-dropdown.method-put > button { color: #62a0ea; }
+  .method-patch, .method-dropdown.method-patch > button { color: #c061cb; }
+  .method-delete, .method-dropdown.method-delete > button { color: #f66151; }
+  .method-head, .method-dropdown.method-head > button { color: #5bc8af; }
+  .method-options, .method-dropdown.method-options > button { color: #ffa348; }
+}
+
+/* color picker in the tree menu */
+.color-picker { padding: 4px 8px 2px 8px; }
+button.color-swatch {
+  min-width: 20px; min-height: 20px; padding: 0;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px alpha(black, 0.15);
+}
+button.color-swatch:hover { box-shadow: inset 0 0 0 2px alpha(white, 0.5), 0 0 0 1px alpha(currentColor, 0.3); }
+button.color-swatch.current { box-shadow: 0 0 0 2px @window_bg_color, 0 0 0 4px alpha(currentColor, 0.6); }
+button.color-swatch.none-swatch { background: none; box-shadow: inset 0 0 0 1px alpha(currentColor, 0.3); }
+
+/* project switcher & icon picker */
+button.project-row { padding: 6px 10px; min-width: 220px; }
+.icon-grid > flowboxchild { padding: 0; }
+button.icon-choice { min-width: 36px; min-height: 36px; padding: 0; border-radius: 8px; }
+button.icon-choice.current { background-color: alpha(@accent_bg_color, 0.2); box-shadow: inset 0 0 0 2px @accent_bg_color; }
+.project-icon-preview { padding: 12px; border-radius: 14px; background-color: alpha(currentColor, 0.06); }
+
+/* app icon picker (Preferences) */
+button.app-icon-choice { padding: 8px 6px 6px 6px; border-radius: 14px; }
+button.app-icon-choice.current { background-color: alpha(@accent_bg_color, 0.16); box-shadow: inset 0 0 0 2px @accent_bg_color; }
+
+/* icon pickers: only the button inside a grid cell reacts to hover, not the cell itself */
+flowbox.app-icon-grid > flowboxchild,
+flowbox.icon-grid > flowboxchild,
+flowbox.app-icon-grid > flowboxchild:hover,
+flowbox.icon-grid > flowboxchild:hover,
+flowbox.app-icon-grid > flowboxchild:selected,
+flowbox.icon-grid > flowboxchild:selected {
+  background: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+}

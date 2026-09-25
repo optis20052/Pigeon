@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Pigeon
+GenericName=API Client
+Comment=Build, send and test HTTP requests
+Exec=pigeon
+Icon=dev.pigeon.Pigeon
+Terminal=false
+Type=Application
+Categories=Development;GTK;GNOME;
+Keywords=api;http;rest;openapi;swagger;request;curl;graphql;
+StartupNotify=true
+StartupWMClass=dev.pigeon.Pigeon
