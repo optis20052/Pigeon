@@ -110,13 +110,24 @@ Pick from five app icons (Dusk, Cobalt, Mint, Sunrise and Ivory). The choice app
 
 Pigeon needs **GTK ≥ 4.12** and **libadwaita ≥ 1.7** (e.g. Ubuntu 25.04+ or Fedora 42+). Building requires **Rust 1.85+**; get it from [rustup](https://rustup.rs) if your distribution's is older.
 
-### Debian / Ubuntu package
+### Debian / Ubuntu
+
+Download the `.deb` from the [releases page](https://github.com/optis20052/Pigeon/releases) and run `sudo apt install ./pigeon_*.deb`, or build it yourself:
 
 ```sh
 sudo apt install libgtk-4-dev libadwaita-1-dev dpkg-dev   # build dependencies
 ./packaging/build-deb.sh                                # → target/deb/pigeon_<version>_<arch>.deb
 sudo apt install ./target/deb/pigeon_*.deb
 ```
+
+### Fedora
+
+```sh
+./packaging/build-rpm.sh            # builds inside a Fedora 43 container (needs Docker)
+sudo dnf install ./target/rpm/pigeon-*.rpm
+```
+
+Or download the `.rpm` from the [releases page](https://github.com/optis20052/Pigeon/releases).
 
 ### Per-user install (any distribution)
 
